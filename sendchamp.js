@@ -3,8 +3,6 @@ const request = require('request');
 require('dotenv').config();
 
 const ACCESS_KEY = process.env.SENDCHAMP_ACCESS_KEY;
-const SECRET_KEY = process.env.SENDCHAMP_SECRET_KEY;
-
 
 const sendSms = async (data) => {
     try {

@@ -11,7 +11,7 @@ app.use(logger('dev'))
 const userDatabase = [];
 
 // Create user endpoint
-
+app.get('/')
 app.post('/users', (req, res) => {
     const { email, password, phone } = req.body;
     const user = {
