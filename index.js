@@ -1,9 +1,14 @@
 const express = require('express');
 const logger = require('morgan');
+const helmet = require("helmet");
+const cors = require('cors');
+
 const sendSms = require('./sendchamp');
 
 const app = express();
 
+app.use(cors());
+app.use(helmet());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logger('dev'))
@@ -27,7 +32,7 @@ app.post('/users', (req, res) => {
     userDatabase.push(user);
     const data = {
         to: user.phone,
-        message: 'Welcome to our Chere! Your verification code is 54875 ',
+        message: 'Welcome to Chere! Your verification code is 54875 ',
         sender_name: 'Iroleh'
     }
 

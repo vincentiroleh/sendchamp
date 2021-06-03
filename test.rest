@@ -5,4 +5,4 @@ content-type: application/json
     "email":"irolehiroleh@gmail.com",
     "password":"!@2021",
     "phone":"2348165152414"
-};
+}

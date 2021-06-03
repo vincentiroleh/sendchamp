@@ -4,3 +4,4 @@ The purpose of this codebase is to show how to send SMS using sendchamp.com API 
 
 # Postman Doc
 
+https://documenter.getpostman.com/view/6058934/TzY4eEDN
