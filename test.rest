@@ -1,5 +1,6 @@
-POST http://localhost:3000/users     HTTP/1.1
+POST https://send-champ.herokuapp.com/users     HTTP/1.1
 content-type: application/json
+
 {
     "email":"irolehiroleh@gmail.com",
     "password":"!@2021",

@@ -11,7 +11,11 @@ app.use(logger('dev'))
 const userDatabase = [];
 
 // Create user endpoint
-app.get('/')
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Hola, testing sendchamp API'
+    })
+})
 app.post('/users', (req, res) => {
     const { email, password, phone } = req.body;
     const user = {
@@ -36,7 +40,7 @@ app.post('/users', (req, res) => {
 });
 
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
