@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const helmet = require("helmet");
 const cors = require('cors');
+const crypto = require("crypto");
 
 const sendSms = require('./sendchamp');
 
@@ -20,7 +21,8 @@ app.get('/', (req, res) => {
     res.json({
         message: 'Hola, testing sendchamp API'
     })
-})
+});
+
 app.post('/users', (req, res) => {
     const { email, password, phone } = req.body;
     const user = {
@@ -29,10 +31,13 @@ app.post('/users', (req, res) => {
         phone
     };
 
+    const n = crypto.randomInt(0, 1000000);
+    const verificationCode = n.toString().padStart(6, "0");
+
     userDatabase.push(user);
     const data = {
         to: user.phone,
-        message: 'Welcome to Chere! Your verification code is 54875 ',
+        message: `Welcome to Chere! Your verification code is ${verificationCode} `,
         sender_name: 'Iroleh'
     }
 
